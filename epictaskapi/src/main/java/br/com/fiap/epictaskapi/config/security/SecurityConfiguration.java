@@ -35,17 +35,6 @@ public class SecurityConfiguration {
         return http.build();
     }
 
-    // @Bean
-    // public UserDetailsService users(){
-    //     UserDetails user = User.builder()
-    //         .username("joao@fiap.com.br")
-    //         .password("$2a$12$fJRy5k93hXvZbgFvXS0eN.FjZ5ykqjYHIhuNDTr62C/Pj10y6eorG")
-    //         .roles("USER")
-    //         .build();
-
-    //     return new InMemoryUserDetailsManager(user);
-    // }
-
     @Bean
     public PasswordEncoder passwordEncoder(){
        return new BCryptPasswordEncoder();

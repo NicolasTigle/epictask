@@ -3,12 +3,7 @@ GET http://localhost:8080/api/user
 ###
 
 # Detalhes do usuário
-GET http://localhost:8080/api/user/8
-###
-
-# Deletar
-DELETE http://localhost:8080/api/user/6
-Authorization: Basic admin@fiap.com.br administrador
+GET http://localhost:8080/api/user/4
 ###
 
 # Cadastrar usuário
@@ -17,12 +12,17 @@ Content-Type: application/json
 
 {
 
-	"name": "Nicolas",
-	"email": "nicolas@gmail.com",
+	"name": "Amanda",
+	"email": "amanda@gmail.com",
 	"password": "123"
 
 }
 
+###
+
+# Deletar
+DELETE http://localhost:8080/api/user/2
+Authorization: Basic admin@fiap.com.br administrador
 ###
 
 # Atualizar
@@ -32,8 +32,8 @@ Authorization: Basic admin@fiap.com.br administrador
 
 {
 
-	"name": "Nicolasaaaaaaa",
-	"email": "nicolaaaas@gmail.com"
+	"name": "Amanda",
+	"email": "amanda123@gmail.com"
 
 }
 
@@ -44,12 +44,7 @@ GET http://localhost:8080/api/task
 ###
 
 # Detalhes da tarefa
-GET http://localhost:8080/api/task/1
-###
-
-# Deletar
-DELETE http://localhost:8080/api/task/1
-Authorization: Basic admin@fiap.com.br administrador
+GET http://localhost:8080/api/task/10
 ###
 
 # Cadastrar tarefa
@@ -59,7 +54,7 @@ Authorization: Basic admin@fiap.com.br administrador
 
 {
 
-	"title": "Corrigir bug de dataaaaaa",
+	"title": "Corrigir bug de data",
 	"description": "formatar da data no padrão BR",
 	"score": 50
 
@@ -67,16 +62,20 @@ Authorization: Basic admin@fiap.com.br administrador
 
 ###
 
+# Deletar
+DELETE http://localhost:8080/api/task/1
+Authorization: Basic admin@fiap.com.br administrador
+###
+
 # Atualizar
-PUT http://localhost:8080/api/task/1
+PUT http://localhost:8080/api/task/10
 Content-Type: application/json
 Authorization: Basic admin@fiap.com.br administrador
 
 {
 
-	"title": "Corrigir bug de dataaaa",
+	"title": "Corrigir bug de datas",
 	"description": "formatar da data no padrão BR"
-
 
 }
 

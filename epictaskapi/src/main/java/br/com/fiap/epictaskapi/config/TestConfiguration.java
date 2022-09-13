@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import br.com.fiap.epictaskapi.model.Task;
@@ -53,6 +52,23 @@ public class TestConfiguration implements CommandLineRunner {
                 "admin@fiap.com.br", 
                 "administrador")
         );
+
+        userService.save(
+            new User(
+                "Nicolas", 
+                "nicolas@fiap.com.br", 
+                "123")
+        );
+
+        userService.save(
+            new User(
+                "Gabriel", 
+                "gabriel@fiap.com.br", 
+                "1234")
+        );
+
+        
+
     }
     
 }

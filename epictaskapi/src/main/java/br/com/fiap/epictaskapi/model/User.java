@@ -9,13 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -25,10 +24,15 @@ public class User implements UserDetails {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank(message = "Nome do usuario obrigatorio.")
     private String name;
+
+    @NotBlank(message = "Email obrigatorio.")
     private String email;
     
     @JsonProperty(access = Access.WRITE_ONLY)
+    @NotBlank(message = "Senha obrigatoria.")
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -41,11 +45,6 @@ public class User implements UserDetails {
         this.name = name;
         this.email = email;
         this.password = password;
-    }
-    
-    public User(String name, String email) {
-        this.name = name;
-        this.email = email;
     }
 
     public Long getId() {
