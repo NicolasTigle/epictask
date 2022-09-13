@@ -7,8 +7,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -26,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.fiap.epictaskapi.dto.UserDTO;
 import br.com.fiap.epictaskapi.model.User;
 import br.com.fiap.epictaskapi.service.UserService;
 
@@ -38,7 +37,6 @@ public class UserController {
     private UserService service;
 
     @GetMapping
-    @Cacheable("users")
     public Page<User> index(@PageableDefault(size=5, sort = "name") Pageable paginacao){
         return service.listAll(paginacao);
     }
@@ -55,7 +53,6 @@ public class UserController {
     }
 
     @DeleteMapping("{id}")
-    @CacheEvict(value = "users", allEntries = true)
     public ResponseEntity<Object> destroy(@PathVariable Long id){
         Optional<User> optional = service.get(id);
 
@@ -67,7 +64,7 @@ public class UserController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody @Valid User newUser){
+    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody @Valid UserDTO newUserDTO){
         // carregar a tarefa do banco
         Optional<User> optional = service.get(id);
 
@@ -77,7 +74,7 @@ public class UserController {
 
         // atualizar os dados 
         User user = optional.get();
-        BeanUtils.copyProperties(newUser, user);
+        BeanUtils.copyProperties(newUserDTO, user);
         user.setId(id);
 
         // salvar a tarefa

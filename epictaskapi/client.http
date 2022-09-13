@@ -3,11 +3,11 @@ GET http://localhost:8080/api/user
 ###
 
 # Detalhes do usuário
-GET http://localhost:8080/api/user/1
+GET http://localhost:8080/api/user/8
 ###
 
 # Deletar
-DELETE http://localhost:8080/api/user/3
+DELETE http://localhost:8080/api/user/6
 Authorization: Basic admin@fiap.com.br administrador
 ###
 
@@ -26,15 +26,14 @@ Content-Type: application/json
 ###
 
 # Atualizar
-PUT http://localhost:8080/api/user/3
+PUT http://localhost:8080/api/user/4
 Content-Type: application/json
-Authorization: Basic admin@fiap.com.br 123
+Authorization: Basic admin@fiap.com.br administrador
 
 {
 
 	"name": "Nicolasaaaaaaa",
-	"email": "nicolas@gmail.com",
-	"password": "123"
+	"email": "nicolaaaas@gmail.com"
 
 }
 
@@ -76,9 +75,8 @@ Authorization: Basic admin@fiap.com.br administrador
 {
 
 	"title": "Corrigir bug de dataaaa",
-	"description": "formatar da data no padrão BR",
-	"score": 50,
-	"status": 15
+	"description": "formatar da data no padrão BR"
+
 
 }
 
