@@ -1,0 +1,85 @@
+# Listar usuários
+GET http://localhost:8080/api/user
+###
+
+# Detalhes do usuário
+GET http://localhost:8080/api/user/1
+###
+
+# Deletar
+DELETE http://localhost:8080/api/user/3
+Authorization: Basic admin@fiap.com.br administrador
+###
+
+# Cadastrar usuário
+POST http://localhost:8080/api/user
+Content-Type: application/json
+
+{
+
+	"name": "Nicolas",
+	"email": "nicolas@gmail.com",
+	"password": "123"
+
+}
+
+###
+
+# Atualizar
+PUT http://localhost:8080/api/user/3
+Content-Type: application/json
+Authorization: Basic admin@fiap.com.br 123
+
+{
+
+	"name": "Nicolasaaaaaaa",
+	"email": "nicolas@gmail.com",
+	"password": "123"
+
+}
+
+###
+
+# Listar tarefas
+GET http://localhost:8080/api/task
+###
+
+# Detalhes da tarefa
+GET http://localhost:8080/api/task/1
+###
+
+# Deletar
+DELETE http://localhost:8080/api/task/1
+Authorization: Basic admin@fiap.com.br administrador
+###
+
+# Cadastrar tarefa
+POST http://localhost:8080/api/task
+Content-Type: application/json
+Authorization: Basic admin@fiap.com.br administrador
+
+{
+
+	"title": "Corrigir bug de dataaaaaa",
+	"description": "formatar da data no padrão BR",
+	"score": 50
+
+}
+
+###
+
+# Atualizar
+PUT http://localhost:8080/api/task/1
+Content-Type: application/json
+Authorization: Basic admin@fiap.com.br administrador
+
+{
+
+	"title": "Corrigir bug de dataaaa",
+	"description": "formatar da data no padrão BR",
+	"score": 50,
+	"status": 15
+
+}
+
+###
