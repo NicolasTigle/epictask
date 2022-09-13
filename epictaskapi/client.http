@@ -20,12 +20,12 @@ Content-Type: application/json
 
 ###
 
-# Deletar
+# Deletar usuário
 DELETE http://localhost:8080/api/user/2
 Authorization: Basic admin@fiap.com.br administrador
 ###
 
-# Atualizar
+# Atualizar usuário
 PUT http://localhost:8080/api/user/4
 Content-Type: application/json
 Authorization: Basic admin@fiap.com.br administrador
@@ -62,12 +62,12 @@ Authorization: Basic admin@fiap.com.br administrador
 
 ###
 
-# Deletar
+# Deletar tarefa
 DELETE http://localhost:8080/api/task/1
 Authorization: Basic admin@fiap.com.br administrador
 ###
 
-# Atualizar
+# Atualizar tarefa
 PUT http://localhost:8080/api/task/10
 Content-Type: application/json
 Authorization: Basic admin@fiap.com.br administrador
